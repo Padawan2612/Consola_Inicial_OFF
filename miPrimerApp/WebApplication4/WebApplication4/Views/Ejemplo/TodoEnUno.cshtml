@@ -1,0 +1,126 @@
+﻿@model IEnumerable<WebApplication4.Entities.Empleado>
+
+@{
+    ViewData["Title"] = "TodoEnUno";
+}
+
+<h1>Todo en uno</h1>
+
+<p>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Crear nuevo
+    </button>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nacimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departamento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nacimiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departamento.DepartamentoId)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.EmpleadoId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.EmpleadoId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.EmpleadoId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<!-- Modal -->
+@*<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Crear empleado</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">*@
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="form-group">
+    <label for="Nombre" class="control-label">Nombre</label>
+    <input type="text" id="Nombre" class="form-control" />
+</div>
+<div class="form-group">
+    <label for="Apellido" class="control-label">Apellido</label>
+    <input type="text" id="Apellido" class="form-control" />
+</div>
+<div class="form-group">
+    <label for="Salario" class="control-label">Salario</label>
+    <input type="number" id="Salario" class="form-control" />
+</div>
+<div class="form-group">
+    <label for="Nacimiento" class="control-label"></label>
+    <input type="date" id="Nacimiento" class="form-control" />
+</div>
+
+            </div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+    <button type="button" class="btn btn-primary" onclick="grabar();">Grabar</button>
+</div>
+@*</div>
+        </div>
+    </div>*@
+
+@*<div id="target"></div>*@
+
+<script>
+    function grabar() {
+        debugger
+        var data = {
+            Nombre: $('#Nombre')[0].value,
+            Apellido: $('#Apellido')[0].value,
+            Salario: $('#Salario')[0].value,
+            Nacimiento: $('#Nacimiento')[0].value
+        };
+
+        $.post('/ejemplo/crear', data)
+            .done(function (resultado) {
+                //$('#target')[o].hmtl(resultado);
+                if (resultado) {
+                    alert("Se grabó");
+                }
+            })
+            .fail(function () {
+                console.log("no se guarado");
+                );
+    }
+</script>
