@@ -1,0 +1,33 @@
+﻿@model IEnumerable<WebApplication1.Entities.Mountain>
+@using WebApplication1.Entities
+@{
+    ViewData["Title"] = "Lista de montañas";
+}
+<h3>Lista de montañas</h3>
+<hr />
+@if (!Model.Any())
+{
+    <p>"No hay montañas registradas"</p>
+}
+<a href="/mountains/create" class="btn btn-primary" >Registrar un nueva montaña</a>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Altitud</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Mountain actual in Model)
+        {
+            <tr>
+                <td>
+                    @(actual.Nombre)
+                </td>
+                <td>
+                    @(actual.Altitud)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
