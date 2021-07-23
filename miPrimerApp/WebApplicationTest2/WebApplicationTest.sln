@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArbolNodosTarea", "ArbolNodosTarea\ArbolNodosTarea.csproj", "{FD503F60-96DF-4F4F-BE4D-DD32528C8237}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationTest", "WebApplicationTest\WebApplicationTest.csproj", "{074837B1-4A79-43FA-B1AD-37060816D3BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FD503F60-96DF-4F4F-BE4D-DD32528C8237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD503F60-96DF-4F4F-BE4D-DD32528C8237}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FD503F60-96DF-4F4F-BE4D-DD32528C8237}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FD503F60-96DF-4F4F-BE4D-DD32528C8237}.Release|Any CPU.Build.0 = Release|Any CPU
+		{074837B1-4A79-43FA-B1AD-37060816D3BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{074837B1-4A79-43FA-B1AD-37060816D3BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{074837B1-4A79-43FA-B1AD-37060816D3BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{074837B1-4A79-43FA-B1AD-37060816D3BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {2C4622B3-9EAA-41DD-AC2D-AE849E4389B6}
+		SolutionGuid = {C76672D7-2653-447F-AD70-B83B4E1AE8D0}
 	EndGlobalSection
 EndGlobal
